@@ -1,0 +1,4 @@
+id,exclude,type,arch,app,vin,vout,iout,pout,eff,fsw,ind,pd,cd,iq,ripple,dv,node,area,cal,note,by
+# One row per paper. id = IEEE article number (last number in the Xplore URL). Empty keeps the automatic value; - or NA removes it.
+# type = Inductive, Switched-capacitor, Hybrid or System (PMIC/charger/harvester). arch/app take several values separated by ";" (e.g. Buck;Multi-level). by naming an AI tool (Codex, GPT, Claude ...) marks the row as AI-extracted.
+# Units: vin, vout, ripple, dv in V; iout, iq in A (1.2, 500m, 10u); pout in W; eff in %; fsw in Hz (70M); ind in H (4.7n); pd in W/mm2; cd in A/mm2; node in nm; area in mm2.
