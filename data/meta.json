@@ -1,29 +1,29 @@
 {
  "title": "PMIC Census",
  "source": "IEEE Xplore API (records collected by adc-census)",
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "coverage_from": "1997-01",
  "coverage_to": "2026-10",
- "total": 1803,
- "core": 1569,
+ "total": 2394,
+ "core": 2059,
  "by_venue": {
   "TCAS-I": 414,
   "TCAS-II": 333,
   "JSSC": 390,
   "TVLSI": 87,
-  "VLSI": 36,
-  "CICC": 66,
-  "ISSCC": 155,
-  "A-SSCC": 18,
-  "ESSCIRC": 32,
+  "VLSI": 135,
+  "CICC": 180,
+  "ISSCC": 272,
+  "A-SSCC": 104,
+  "ESSCIRC": 106,
   "SSC-L": 38
  },
  "by_type": {
-  "System": 296,
-  "Switched-capacitor": 208,
-  "Inductive": 655,
-  "Hybrid": 256,
-  "Unspecified": 154
+  "System": 395,
+  "Switched-capacitor": 278,
+  "Inductive": 872,
+  "Hybrid": 316,
+  "Unspecified": 198
  },
  "last_run_new": 0
 }
