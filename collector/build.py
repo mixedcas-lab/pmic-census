@@ -170,7 +170,10 @@ def rebuild(config, cache, run_date):
         r = build_record(a, venues)
         if not r or (since and r["y"] and r["y"] < since):
             continue
-        r["first"] = (old.get(r["id"]) or {}).get("first") or run_date
+        prev = old.get(r["id"])
+        # papers that appear because the adc-census back-catalogue sweep reached an older year are not "new"
+        recent = (r["y"] or 0) >= int(run_date[:4]) - 1
+        r["first"] = (prev.get("first", "") if prev else run_date) if recent else ""
         papers.append(r)
     if not papers and old:
         raise SystemExit("no PMIC papers found in %s - is the adc-census cache there? (keeping the old data)" % cache)
@@ -197,7 +200,7 @@ def rebuild(config, cache, run_date):
         "core": sum(1 for p in papers if p["lv"] == "core"),
         "by_venue": by_venue,
         "by_type": by_type,
-        "last_run_new": sum(1 for p in papers if p["id"] not in old) if old else 0,   # the first build adds nothing "new"
+        "last_run_new": sum(1 for p in papers if p["first"] == run_date) if old else 0,   # the first build adds nothing "new"
     }
     save_json(META, meta)
     log("wrote %d papers (%d core, %d new)" % (len(papers), meta["core"], meta["last_run_new"]))
